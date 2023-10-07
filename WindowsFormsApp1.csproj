@@ -134,5 +134,29 @@
   <ItemGroup>
     <None Include="Resources\Pieces\w_queen.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pieces\b_pawn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pieces\b_bishop.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pieces\b_king.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pieces\b_queen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pieces\w_king.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pieces\w_knight.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pieces\w_pawn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pieces\w_rook.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

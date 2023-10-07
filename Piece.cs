@@ -72,7 +72,33 @@ namespace WindowsFormsApp1
 			
 		  
 		}
-		public void Draw(Cell C) => C.BackgroundImage = Image.FromFile("..\\..\\Resources\\Pieces\\" + name + ".png");
+		public void Draw(Cell C)
+		{
+			if (name == "b_pawn")
+				C.BackgroundImage = global::WindowsFormsApp1.Properties.Resources.b_pawn;
+			else if (name == "w_pawn")
+				C.BackgroundImage = global::WindowsFormsApp1.Properties.Resources.w_pawn;
+			else if (name == "w_rook")
+				C.BackgroundImage = global::WindowsFormsApp1.Properties.Resources.w_rook;
+			else if (name == "b_rook")
+				C.BackgroundImage = global::WindowsFormsApp1.Properties.Resources.b_rook;
+			else if (name == "b_bishop")
+				C.BackgroundImage = global::WindowsFormsApp1.Properties.Resources.b_bishop;
+			else if (name == "w_bishop")
+				C.BackgroundImage = global::WindowsFormsApp1.Properties.Resources.w_bishop;
+			else if (name == "w_knight")
+				C.BackgroundImage = global::WindowsFormsApp1.Properties.Resources.w_knight;
+			else if (name == "b_knight")
+				C.BackgroundImage = global::WindowsFormsApp1.Properties.Resources.b_knight;
+			else if (name == "w_king")
+				C.BackgroundImage = global::WindowsFormsApp1.Properties.Resources.w_king;
+			else if (name == "b_king")
+				C.BackgroundImage = global::WindowsFormsApp1.Properties.Resources.b_king;
+			else if (name == "w_queen")
+				C.BackgroundImage = global::WindowsFormsApp1.Properties.Resources.w_queen;
+			else if (name == "b_queen")
+				C.BackgroundImage = global::WindowsFormsApp1.Properties.Resources.b_queen;
+		}
 		public void remDraw(Cell C) => C.BackgroundImage = null;
 		private int selectStatus()
 		{ 

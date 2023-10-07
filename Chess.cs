@@ -128,6 +128,7 @@ namespace WindowsFormsApp1
 			//Default Values of the components
 			chessTablePanel.Controls.Clear();
 			chessTablePanel.Show();
+			selfChkBtn.Show();
 			Source = null;
 			promotionTable.Hide();
 			playerName.Text = allPlayers[0].name;
@@ -318,15 +319,14 @@ namespace WindowsFormsApp1
 				
 				Piece temp = selectedCell.ps;
 				selectedCell.ps = Source.ps;
-				Source.ps = temp;
+				Source.ps = null;
 				MyColor enemyColor = (playerTurn.co == MyColor.White) ? MyColor.Black : MyColor.White;
 				refCellsTag();
 				assignTags(enemyColor);
 				if (isCheckFunc())
 					check = true;
-				temp = selectedCell.ps;
-				selectedCell.ps = Source.ps;
-				Source.ps = temp;
+				Source.ps = selectedCell.ps;
+				selectedCell.ps = temp;
 				refCellsTag();
 				assignTags(enemyColor);
 			}
@@ -403,17 +403,26 @@ namespace WindowsFormsApp1
 				}
 				else if (Source != null && selectedCell.BackColor == ColorTranslator.FromHtml(chessConst.canDie))
 				{
-					exchangeCells(selectedCell);
-					changeTurn();
-					refCellsColo();
-					if(isCheck)
+					if (!checkOnMove(selectedCell))
 					{
-						chkPath(selectedCell);
-						if (isCheckMate())
+						exchangeCells(selectedCell);
+						changeTurn();
+						refCellsColo();
+						if (isCheck)
 						{
-							runEnding();
+							chkPath(selectedCell);
+							if (isCheckMate())
+							{
+								runEnding();
+							}
 						}
 					}
+					else
+					{
+						string message = "Queen Is Endangered";
+						MessageBox.Show(message);
+					}
+
 				}
 				else if(selectedCell.ps.co == playerTurn.co)
 				{
