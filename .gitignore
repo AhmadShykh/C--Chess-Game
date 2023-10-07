@@ -93,7 +93,6 @@ StyleCopReport.xml
 *.tlog
 *.vspscc
 *.vssscc
-.builds
 *.pidb
 *.svclog
 *.scc
@@ -388,11 +387,6 @@ FodyWeavers.xsd
 .history/
 
 # Windows Installer files from build outputs
-*.cab
-*.msi
-*.msix
-*.msm
-*.msp
 
 # JetBrains Rider
 *.sln.iml
